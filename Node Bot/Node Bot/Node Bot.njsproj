@@ -10,7 +10,7 @@
     <Environment>TOKEN_DISCORD=NTU0MDI5MTE2NTk3MzM4MTQx.D23CFg.QsE806vZAEZOoUjuJZBRFD5w7E4
 TOKEN_REDDIT=27556985044-FjGgACcqGfZDqqyJ7_AuTI_sP1U
 SECRET=v6wUtJQ7QER3-OIjKDjZCtre6Io</Environment>
-    <ScriptArguments>--schedule=dailyReset</ScriptArguments>
+    <ScriptArguments>--action=schedule --schedule=dailyReset</ScriptArguments>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
