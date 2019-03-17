@@ -17,7 +17,8 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0"
   },
-  "scripts": {
-    "lint": "eslint --ext .js js/"
-  }
+    "scripts": {
+        "start": "js/app.js", 
+        "lint": "eslint --ext .js js/"
+    }
 }
