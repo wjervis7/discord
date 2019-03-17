@@ -1,0 +1,74 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>Node Bot</Name>
+    <RootNamespace>Node Bot</RootNamespace>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+    <NodeExePath>
+    </NodeExePath>
+    <Environment>TOKEN_DISCORD=NTU0MDI5MTE2NTk3MzM4MTQx.D23CFg.QsE806vZAEZOoUjuJZBRFD5w7E4
+TOKEN_REDDIT=27556985044-FjGgACcqGfZDqqyJ7_AuTI_sP1U
+SECRET=v6wUtJQ7QER3-OIjKDjZCtre6Io</Environment>
+    <ScriptArguments>--schedule=dailyReset</ScriptArguments>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>3431b045-1b7e-4df4-a2ed-dc3e66069760</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>js\app.js</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <StartWebBrowser>False</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="config.json">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="js\app.js" />
+    <Compile Include="js\bot.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="js\commands\embed.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="js\commands\ping.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="js\schedule.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include=".eslintrc">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="embeds\useful-links.json">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="schedules.json">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="js\" />
+    <Folder Include="js\commands\" />
+    <Folder Include="embeds\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+</Project>

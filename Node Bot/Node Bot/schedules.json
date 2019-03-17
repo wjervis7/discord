@@ -1,0 +1,19 @@
+{
+  "schedules": [
+    {
+        "name": "dailyReset",
+        "query": "Daily Reset Thread",
+        "time": "day"
+    },
+    {
+        "name": "weeklyReset",
+        "query": "Weekly Reset Thread",
+        "time": "week"
+    },
+    {
+        "name": "xur",
+        "query": "Xûr Megathread",
+        "time": "week"
+    }
+  ]
+}
