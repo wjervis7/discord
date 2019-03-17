@@ -2,8 +2,8 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>Node Bot</Name>
-    <RootNamespace>Node Bot</RootNamespace>
+    <Name>NodeBot</Name>
+    <RootNamespace>NodeBot</RootNamespace>
     <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
     <NodeExePath>
     </NodeExePath>
@@ -17,7 +17,8 @@ SECRET=v6wUtJQ7QER3-OIjKDjZCtre6Io</Environment>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3431b045-1b7e-4df4-a2ed-dc3e66069760</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectHome>
+    </ProjectHome>
     <StartupFile>js\app.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
