@@ -1,4 +1,5 @@
 const discord = require("discord.js");
+const minimist = require("minimist-string");
 const fs = require("fs");
 const { prefix } = require("../config.json");
 
@@ -27,8 +28,8 @@ const executeBot = () => {
             return;
         }
 
-        const args = message.content.slice(prefix.length).split(/ +/);
-        const commandName = args.shift().toLowerCase();
+        const args = minimist(message.content);
+        const commandName = args._[0].substr(1);
 
         if (!client.commands.has(commandName)) {
             return;

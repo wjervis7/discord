@@ -9,7 +9,9 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "minimist": "^1.2.0",
+    "minimist-string": "^1.0.2",
     "moment": "^2.24.0",
+    "node-cron": "^2.0.3",
     "snoowrap": "^1.15.2"
   },
   "devDependencies": {
@@ -17,8 +19,8 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0"
   },
-    "scripts": {
-        "start": "node js/app.js", 
-        "lint": "eslint --ext .js js/"
-    }
+  "scripts": {
+    "start": "node js/app.js",
+    "lint": "eslint --ext .js js/"
+  }
 }
