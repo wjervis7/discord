@@ -41,22 +41,14 @@ const getRedditPost = async (schedule) => {
             return post;
         }
     }
-    return undefined;
+    await sleep(60000);
+    return getRedditPost(schedule);
 };
 
 const executeSchedule = async (args) => {
     const schedule = schedules.filter(s => s.name === args.schedule)[0];
 
-    let redditPost;
-
-    do {
-        redditPost = await getRedditPost(schedule); // eslint-disable-line no-await-in-loop
-        if (redditPost) {
-            break;
-        }
-        await sleep(60000); // eslint-disable-line no-await-in-loop
-        // ReSharper disable once ConditionIsAlwaysConst
-    } while (!redditPost);
+    const redditPost = getRedditPost(schedule);
 
     const client = new discord.Client();
     await client.login(token);
