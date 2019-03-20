@@ -42,6 +42,7 @@ const getRedditPost = async (redditClient, schedule) => {
 
 const executeSchedule = async (args) => {
     const schedule = schedules.filter(s => s.name === args.schedule)[0];
+    console.info(`Executing schedule ${schedule.name}.  Using query ${schedule.query} over the last ${schedule.time}.`);
 
     const redditClient = new RedditClient({
         userAgent,
@@ -51,6 +52,7 @@ const executeSchedule = async (args) => {
     });
 
     const redditPost = getRedditPost(redditClient, schedule);
+    console.info(`Found reddit post for ${schedule.name}: ${redditPost.url}.\r\nPosting to Discord channel ${channelId} on server ${serverId}.`);
 
     const client = new discord.Client();
     await client.login(token);
@@ -58,6 +60,7 @@ const executeSchedule = async (args) => {
     const channel = server.channels.get(channelId);
 
     channel.send(redditPost.url);
+    console.info("Posted to discord.  Scheduled task completed.");
 
     client.destroy();
 };
