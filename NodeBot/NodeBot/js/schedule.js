@@ -23,7 +23,6 @@ const sleep = ms => new Promise((resolve) => {
 });
 
 const getRedditPost = async (redditClient, schedule) => {
-
     const posts = await redditClient.getSubreddit(subReddit).search({
         query: schedule.query,
         time: schedule.time,
@@ -32,10 +31,11 @@ const getRedditPost = async (redditClient, schedule) => {
     for (const post of posts) {
         const createDate = moment.unix(post.created).utc();
         const now = moment.utc();
-        if (createDate.isSame(now, "day")) {
+        if (createDate.isSame(now, schedule.time)) {
             return post;
         }
     }
+    console.info("Unable to find reddit post.  Waiting a minute.");
     await sleep(60000);
     return getRedditPost(schedule);
 };
