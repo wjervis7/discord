@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 const moment = require("moment");
 const RedditClient = require("snoowrap");
-const { schedules } = require("../schedules.json");
+const { schedules } = require("../configs/schedules.json");
 
 const token = process.env.TOKEN_DISCORD;
 const clientSecret = process.env.SECRET;
@@ -16,20 +16,15 @@ const {
     userAgent,
     clientId,
     subReddit
-} = require("../config.json");
+} = require("../configs/config.json");
 
 const sleep = ms => new Promise((resolve) => {
     setTimeout(resolve, ms);
 });
 
-const getRedditPost = async (schedule) => {
-    const r = new RedditClient({
-        userAgent,
-        clientId,
-        clientSecret,
-        refreshToken
-    });
-    const posts = await r.getSubreddit(subReddit).search({
+const getRedditPost = async (redditClient, schedule) => {
+
+    const posts = await redditClient.getSubreddit(subReddit).search({
         query: schedule.query,
         time: schedule.time,
         sort: "new"
@@ -48,7 +43,14 @@ const getRedditPost = async (schedule) => {
 const executeSchedule = async (args) => {
     const schedule = schedules.filter(s => s.name === args.schedule)[0];
 
-    const redditPost = getRedditPost(schedule);
+    const redditClient = new RedditClient({
+        userAgent,
+        clientId,
+        clientSecret,
+        refreshToken
+    });
+
+    const redditPost = getRedditPost(redditClient, schedule);
 
     const client = new discord.Client();
     await client.login(token);

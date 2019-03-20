@@ -36,7 +36,7 @@ SECRET=v6wUtJQ7QER3-OIjKDjZCtre6Io</Environment>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="config.json">
+    <Compile Include="configs\config.json">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="js\app.js" />
@@ -47,9 +47,6 @@ SECRET=v6wUtJQ7QER3-OIjKDjZCtre6Io</Environment>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="js\commands\ping.js">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="js\commands\schedule.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="js\schedule.js">
@@ -63,7 +60,7 @@ SECRET=v6wUtJQ7QER3-OIjKDjZCtre6Io</Environment>
     </Content>
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="schedules.json">
+    <Content Include="configs\schedules.json">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>
@@ -71,6 +68,7 @@ SECRET=v6wUtJQ7QER3-OIjKDjZCtre6Io</Environment>
     <Folder Include="js\" />
     <Folder Include="js\commands\" />
     <Folder Include="embeds\" />
+    <Folder Include="configs\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

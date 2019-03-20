@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 const minimist = require("minimist-string");
 const fs = require("fs");
-const { prefix } = require("../config.json");
+const { prefix } = require("../configs/config.json");
 
 const executeBot = () => {
     const token = process.env.TOKEN_DISCORD;

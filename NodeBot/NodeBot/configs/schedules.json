@@ -1,0 +1,24 @@
+{
+  "schedules": [
+    {
+        "name": "dailyReset",
+        "query": "title:\"Daily Reset Thread\"",
+        "time": "day"
+    },
+    {
+        "name": "weeklyReset",
+        "query": "title:\"Weekly Reset Thread\"",
+        "time": "week"
+    },
+    {
+        "name": "xur",
+        "query": "title:\"Xûr Megathread\"",
+        "time": "week"
+    },
+      {
+        "name": "twab",
+        "query": "title:\"This Week at Bungie\"",
+        "time": "week" 
+      }
+  ]
+}
