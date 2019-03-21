@@ -31,13 +31,13 @@ const getRedditPost = async (redditClient, schedule) => {
     for (const post of posts) {
         const createDate = moment.unix(post.created).utc();
         const now = moment.utc();
-        if (createDate.isSame(now, schedule.time)) {
+        if (createDate.isSame(now, "day")) {
             return post;
         }
     }
     console.log("Unable to find reddit post.  Waiting a minute.");
     await sleep(60000);
-    return getRedditPost(schedule);
+    return getRedditPost(redditClient, schedule);
 };
 
 const executeSchedule = async (args) => {
