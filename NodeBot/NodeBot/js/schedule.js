@@ -51,7 +51,7 @@ const executeSchedule = async (args) => {
         refreshToken
     });
 
-    const redditPost = getRedditPost(redditClient, schedule);
+    const redditPost = await getRedditPost(redditClient, schedule);
     console.log(`Found reddit post for ${schedule.name}: ${redditPost.url}.\r\nPosting to Discord channel ${channelId} on server ${serverId}.`);
 
     const client = new discord.Client();
