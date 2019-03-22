@@ -12,7 +12,7 @@
     },
     {
         "name": "xur",
-        "query": "Xûr Megathread",
+        "query": "title:\"Xûr Megathread\"",
         "time": "week"
     },
       {
