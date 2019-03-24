@@ -42,7 +42,14 @@ const getRedditPost = async (redditClient, schedule) => {
 
 const executeSchedule = async (args) => {
     const schedule = schedules.filter(s => s.name === args.schedule)[0];
+
     console.log(`Executing schedule ${schedule.name}.  Using query ${schedule.query} over the last ${schedule.time}.`);
+    const client = new discord.Client();
+    const promises = [
+        client.login(token).then(() => {
+            client.user.setPresence({ game: { name: `Getting latest ${schedule.activity}` }, status: "online" });
+        })
+    ];
 
     const redditClient = new RedditClient({
         userAgent,
@@ -51,17 +58,17 @@ const executeSchedule = async (args) => {
         refreshToken
     });
 
-    const redditPost = await getRedditPost(redditClient, schedule);
+    promises.push(getRedditPost(redditClient, schedule));
+    const [, redditPost] = await Promise.all(promises);
     console.log(`Found reddit post for ${schedule.name}: ${redditPost.url}.\r\nPosting to Discord channel ${channelId} on server ${serverId}.`);
 
-    const client = new discord.Client();
-    await client.login(token);
     const server = client.guilds.get(serverId);
     const channel = server.channels.get(channelId);
 
     channel.send(redditPost.url);
     console.log("Posted to discord.  Scheduled task completed.");
 
+    client.user.setPresence({ game: { name: "" }, status: "idle" });
     client.destroy();
 };
 
