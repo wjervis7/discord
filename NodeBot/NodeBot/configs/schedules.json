@@ -2,25 +2,25 @@
   "schedules": [
     {
         "name": "dailyReset",
-        "query": "title:\"Daily Reset Thread\"",
+        "query": "title:\"Daily Reset Thread\" author:\"DTG_BOT\"",
         "time": "day",
         "activity": "Daily Reset Thread"
     },
     {
         "name": "weeklyReset",
-        "query": "title:\"Weekly Reset Thread\"",
+        "query": "title:\"Weekly Reset Thread\" author:\"DTG_BOT\"",
         "time": "week",
         "activity": "Weekly Reset Thread"
     },
     {
         "name": "xur",
-        "query": "title:\"Xûr Megathread\"",
+        "query": "title:\"Xûr Megathread\" author:\"DTG_BOT\"",
         "time": "week",
         "activity": "Xûr Megathread"
     },
     {
         "name": "twab",
-        "query": "title:\"This Week at Bungie\"",
+        "query": "title:\"This Week at Bungie\" author:\"DTG_BOT\"",
         "time": "week",
         "activity": "This Week at Bungie"
     }

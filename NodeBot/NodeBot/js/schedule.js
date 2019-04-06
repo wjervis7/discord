@@ -11,7 +11,7 @@ if (!token) {
     throw Error("Token is null");
 }
 const {
-    channelId,
+    channelId: defaultChannelId,
     guildId: serverId,
     userAgent,
     clientId,
@@ -22,26 +22,28 @@ const sleep = ms => new Promise((resolve) => {
     setTimeout(resolve, ms);
 });
 
-const getRedditPost = async (redditClient, schedule) => {
+const getRedditPost = async (redditClient, { query, time }) => {
     const posts = await redditClient.getSubreddit(subReddit).search({
-        query: schedule.query,
-        time: schedule.time,
+        query,
+        time,
         sort: "new"
     });
     for (const post of posts) {
         const createDate = moment.unix(post.created).utc();
-        const now = moment.utc();
-        if (createDate.isSame(now, "day")) {
+        // const now = moment.utc();
+        const date = moment.utc().add(-1, time);
+        if (createDate.isSameOrAfter(date)) {
             return post;
         }
     }
     console.log("Unable to find reddit post.  Waiting a minute.");
     await sleep(60000);
-    return getRedditPost(redditClient, schedule);
+    return getRedditPost(redditClient, { query, time });
 };
 
 const executeSchedule = async (args) => {
     const schedule = schedules.filter(s => s.name === args.schedule)[0];
+    const channelId = args.channelId ? args.channelId : defaultChannelId;
 
     console.log(`Executing schedule ${schedule.name}.  Using query ${schedule.query} over the last ${schedule.time}.`);
     const client = new discord.Client();
