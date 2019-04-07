@@ -30,9 +30,8 @@ const getRedditPost = async (redditClient, { query, time }) => {
     });
     for (const post of posts) {
         const createDate = moment.unix(post.created).utc();
-        // const now = moment.utc();
-        const date = moment.utc().add(-1, time);
-        if (createDate.isSameOrAfter(date)) {
+        const now = moment.utc();
+        if (createDate.isSame(now, "day")) {
             return post;
         }
     }
