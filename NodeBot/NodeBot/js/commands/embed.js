@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 
 const updateEmbeddedMessage = (channel, args) => {
-    const fileName = args.filter(arg => arg.startsWith("--file=")).map(arg => arg.replace("--file=", ""))[0] || channel.name;
+    const fileName = args.file || channel.name;
 
     const { title, description, fields } = require(`../../embeds/${fileName}`); // eslint-disable-line global-require
 

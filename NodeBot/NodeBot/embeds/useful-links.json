@@ -1,6 +1,6 @@
 ﻿{
     "title": "Useful Links",
-    "description": "@Tweek to update this list",
+    "description": "<@241972467533348864> to update this list",
     "fields": [
         {
             "title": "Reset Links",
@@ -35,25 +35,25 @@
                 "[Wasted on Destiny](https://www.wastedondestiny.com/ \"Wasted on Destiny\")"
             ]
         },
-      {
-        "title": "Personal Tracking Links",
-        "links": [
-          "[D2 Checklist](https://www.d2checklist.com/home \"D2 Checklist\")",
-          "[The Director - Destiny | lowlidev](https://lowlidev.com.au/destiny/ \"The Director - Destiny | lowlidev\")",
-          "[Braytech](https://braytech.org/ \"Braytech\")",
-          "[light.gg](https://www.light.gg/ \"Destiny 2 Database, Collection Manager, and Leaderboards - light.gg\")",
-          "[Destiny Sets](https://destinysets.com/ \"Destiny Sets\")"
-        ]
-      },
         {
-          "title": "Raid Links",
-          "links": [
-            "[Last Wish Guide](https://www.reddit.com/r/DestinyTheGame/comments/9yw6up/infographic_i_made_a_44_ft_long_last_wish_guide/?utm_source=reddit-android \"[Infographic] I made a 44 ft. long Last Wish guide (Eye Charts, Symbol Maps, Cheat Sheets included) : DestinyTheGame\")",
-            "[Vault Encounter (Last Wish) Helper Site](https://the-vault.netlify.com/ \"The Vault\")",
-            "[Last Wish - Wish Wall Wishes](https://www.shacknews.com/article/107433/all-wishes-for-the-wall-of-wishes-in-the-last-wish-raid-in-destiny-2 \"All Wishes for the Wall of Wishes in the Last Wish raid in Destiny 2 | Shacknews\")",
-            "[Scourge of the Past - Post 1st Encounter Map](https://i.imgur.com/nz8pcS6.png )",
-            "[Leviathan - Underbelly Map](https://imgur.com/gallery/RbTbtjt \"Leviathan Raid Underbelly map - Destiny 2 - Imgur\")"
-          ] 
+            "title": "Personal Tracking Links",
+            "links": [
+                "[D2 Checklist](https://www.d2checklist.com/home \"D2 Checklist\")",
+                "[The Director - Destiny | lowlidev](https://lowlidev.com.au/destiny/ \"The Director - Destiny | lowlidev\")",
+                "[Braytech](https://braytech.org/ \"Braytech\")",
+                "[light.gg](https://www.light.gg/ \"Destiny 2 Database, Collection Manager, and Leaderboards - light.gg\")",
+                "[Destiny Sets](https://destinysets.com/ \"Destiny Sets\")"
+            ]
+        },
+        {
+            "title": "Raid Links",
+            "links": [
+                "[Last Wish Guide](https://www.reddit.com/r/DestinyTheGame/comments/9yw6up/infographic_i_made_a_44_ft_long_last_wish_guide/?utm_source=reddit-android \"[Infographic] I made a 44 ft. long Last Wish guide (Eye Charts, Symbol Maps, Cheat Sheets included) : DestinyTheGame\")",
+                "[Vault Encounter (Last Wish) Helper Site](https://the-vault.netlify.com/ \"The Vault\")",
+                "[Last Wish - Wish Wall Wishes](https://www.shacknews.com/article/107433/all-wishes-for-the-wall-of-wishes-in-the-last-wish-raid-in-destiny-2 \"All Wishes for the Wall of Wishes in the Last Wish raid in Destiny 2 | Shacknews\")",
+                "[Scourge of the Past - Post 1st Encounter Map](https://i.imgur.com/nz8pcS6.png )",
+                "[Leviathan - Underbelly Map](https://imgur.com/gallery/RbTbtjt \"Leviathan Raid Underbelly map - Destiny 2 - Imgur\")"
+            ]
         },
         {
             "title": "Misc. Links",
