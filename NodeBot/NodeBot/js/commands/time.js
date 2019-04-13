@@ -79,7 +79,7 @@ const displayTime = (userId, userTime) => {
     if (!userZone) {
         return `You have not set a timezone yet!  ${messageEnd}`;
     }
-    const timeZones = new Set(savedUsers.filter(savedUser => savedUser.timezone !== userZone).map(savedUser => savedUser.timezone));
+    const timeZones = new Set(savedUsers.map(savedUser => savedUser.timezone));
     const time = parseTime(userTime.toString(), userZone);
     for (const timezone of timeZones) {
         formattedTimes.add(formatTime(time.clone(), timezone));
