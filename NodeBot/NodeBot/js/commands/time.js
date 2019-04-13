@@ -20,6 +20,8 @@ const set = (userId, timezone) => {
     return `Your timezone has been saved as ${savedUsers.filter(savedUser => savedUser.userId === userId).map(savedUser => savedUser.timezone)[0]}`;
 };
 
+const format = "YYYY-MM-DD LT z";
+
 const messageEnd = `Want your timezone added? Use the following command: !time --setzone={timezone}.  
 Timezone can be the IANA timezone name or timezone abbreviation.
 Examples: \`!time --setzone=America/Los_Angeles\` or \`!time --setzone=PST\``;
@@ -70,7 +72,7 @@ const parseTime = (time, zone) => {
 const formatTime = (time, timezone) => {
     const s = spacetime(time.format()).goto(timezone);
     const m = moment(s.epoch).tz(s.tz);
-    return m.format("L LT z");
+    return m.format(format);
 };
 
 const displayTime = (userId, userTime) => {
@@ -85,7 +87,7 @@ const displayTime = (userId, userTime) => {
         formattedTimes.add(formatTime(time.clone(), timezone));
     }
     return formattedTimes.length === 0
-        ? `There are no other timezones set by users, so here's your time formatted in your timezones local format: ${time.format("L LT z")}.\n${messageEnd}`
+        ? `There are no other timezones set by users, so here's your time formatted in your timezones local format: ${time.format(format)}.\n${messageEnd}`
         : `${userTime} in your set timezone is:\n${[...formattedTimes].join("\n")}\n${messageEnd}`;
 };
 
