@@ -50,10 +50,19 @@ SECRET=v6wUtJQ7QER3-OIjKDjZCtre6Io</Environment>
     <Compile Include="js\commands\ping.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="js\commands\time.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="js\schedule.js">
       <SubType>Code</SubType>
     </Compile>
     <Content Include=".eslintrc">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="data\.txt">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="data\users.json">
       <SubType>Code</SubType>
     </Content>
     <Content Include="embeds\useful-links.json">
@@ -70,6 +79,7 @@ SECRET=v6wUtJQ7QER3-OIjKDjZCtre6Io</Environment>
     <Folder Include="js\commands\" />
     <Folder Include="embeds\" />
     <Folder Include="configs\" />
+    <Folder Include="data\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

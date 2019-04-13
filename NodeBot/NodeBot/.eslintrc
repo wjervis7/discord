@@ -31,6 +31,7 @@
             "always"
         ],
         "yoda": "error",
-        "import/no-dynamic-require": "off"  
+        "import/no-dynamic-require": "off",
+        "max-len": ["error", { "code": 200 }]
     }
 }
