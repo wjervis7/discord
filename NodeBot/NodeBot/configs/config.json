@@ -4,5 +4,6 @@
     "prefix": "!",
     "userAgent": "wjervis:discord-bot:dtg:1.0.0",
     "clientId": "bwP5zEy0wzHeMg",
-    "subReddit": "DestinyTheGame" 
+    "subReddit": "DestinyTheGame",
+    "retrySeconds": 10
 }

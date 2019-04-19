@@ -1,6 +1,7 @@
 const discord = require("discord.js");
 const moment = require("moment");
 const RedditClient = require("snoowrap");
+const { retrySeconds } = require("../configs/config.json");
 const { schedules } = require("../configs/schedules.json");
 
 const token = process.env.TOKEN_DISCORD;
@@ -36,7 +37,7 @@ const getRedditPost = async (redditClient, { query, time }) => {
         }
     }
     console.log("Unable to find reddit post.  Waiting a minute.");
-    await sleep(60000);
+    await sleep(retrySeconds * 1000);
     return getRedditPost(redditClient, { query, time });
 };
 
