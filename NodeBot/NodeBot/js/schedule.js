@@ -23,16 +23,16 @@ const sleep = ms => new Promise((resolve) => {
     setTimeout(resolve, ms);
 });
 
-const getRedditPost = async (redditClient, { query, time }) => {
+const getRedditPost = async (redditClient, { query, dateFormat, time }) => {
+    const now = moment.utc();
     const posts = await redditClient.getSubreddit(subReddit).search({
-        query,
+        query: query.replace("{date}", now.format(dateFormat)),
         time,
         sort: "new"
     });
     for (const post of posts) {
         const createDate = moment.unix(post.created).utc();
-        const now = moment.utc();
-        if (createDate.isSame(now, "day")) {
+        if (createDate.isSameOrAfter(now, "day")) {
             return post;
         }
     }
