@@ -2,28 +2,32 @@
   "schedules": [
     {
         "name": "dailyReset",
-        "query": "title:\"[D2] Daily Reset Thread [{date}]\" author:\"DTG_BOT\"",
+        "query": "title:\"Daily Reset Thread\" author:\"DTG_BOT\"",
+        "postTitle": "[D2] Daily Reset Thread [{date}]",
         "dateFormat": "YYYY-MM-DD",
         "time": "day",
         "activity": "Daily Reset Thread"
     },
     {
         "name": "weeklyReset",
-        "query": "title:\"[D2] Weekly Reset Thread [{date}]\" author:\"DTG_BOT\"",
+        "query": "title:\"Weekly Reset Thread\" author:\"DTG_BOT\"",
+        "postTitle": "[D2] Weekly Reset Thread [{date}]",
         "dateFormat": "YYYY-MM-DD",
         "time": "week",
         "activity": "Weekly Reset Thread"
     },
     {
         "name": "xur",
-        "query": "title:\"[D2] Xûr Megathread [{date}]\" author:\"DTG_BOT\"",
+        "query": "title:\"Xûr Megathread\" author:\"DTG_BOT\"",
+        "postTitle": "[D2] Xûr Megathread [{date}]",
         "dateFormat": "YYYY-MM-DD",
         "time": "week",
         "activity": "Xûr Megathread"
     },
     {
         "name": "twab",
-        "query": "title:\"This Week at Bungie {date}\" author:\"DTG_BOT\"",
+        "query": "title:\"This Week at Bungie\" author:\"DTG_BOT\"",
+        "postTitle": "This Week at Bungie {date}",
         "dateFormat": "M/D/YYYY",
         "time": "week",
         "activity": "This Week at Bungie"

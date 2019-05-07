@@ -23,14 +23,14 @@ const sleep = ms => new Promise((resolve) => {
     setTimeout(resolve, ms);
 });
 
-const getRedditPost = async (redditClient, { query, time }) => {
+const getRedditPost = async (redditClient, { query, postTitle, time }) => {
     const posts = await redditClient.getSubreddit(subReddit).search({
         query,
         time,
         sort: "new"
     });
     for (const post of posts) {
-        if (post.title === query) {
+        if (post.title === postTitle) {
             return post;
         }
 
@@ -45,7 +45,7 @@ const executeSchedule = async (args) => {
     const schedule = schedules.filter(s => s.name === args.schedule)[0];
     const channelId = args.channelId ? args.channelId : defaultChannelId;
     const now = moment.utc();
-    schedule.query = schedule.query.replace("{date}", now.format(schedule.dateFormat));
+    schedule.postTitle = schedule.postTitle.replace("{date}", now.format(schedule.dateFormat));
     console.log(`Executing schedule ${schedule.name}.  Using query ${schedule.query} over the last ${schedule.time}.`);
     const client = new discord.Client();
     const promises = [
