@@ -23,7 +23,7 @@ const sleep = ms => new Promise((resolve) => {
     setTimeout(resolve, ms);
 });
 
-const getRedditPost = async (redditClient, { queryTemplate, dateFormat, time }) => {
+const getRedditPost = async (redditClient, { query: queryTemplate, dateFormat, time }) => {
     const now = moment.utc();
     const query = queryTemplate.replace("{date}", now.format(dateFormat));
     const posts = await redditClient.getSubreddit(subReddit).search({
