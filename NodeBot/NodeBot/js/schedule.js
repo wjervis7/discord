@@ -23,9 +23,7 @@ const sleep = ms => new Promise((resolve) => {
     setTimeout(resolve, ms);
 });
 
-const getRedditPost = async (redditClient, { query: queryTemplate, dateFormat, time }) => {
-    const now = moment.utc();
-    const query = queryTemplate.replace("{date}", now.format(dateFormat));
+const getRedditPost = async (redditClient, { query, time }) => {
     const posts = await redditClient.getSubreddit(subReddit).search({
         query,
         time,
@@ -35,6 +33,8 @@ const getRedditPost = async (redditClient, { query: queryTemplate, dateFormat, t
         if (post.title === query) {
             return post;
         }
+
+        console.log(`Wrong post :( ${post.title}`);
     }
     console.log("Unable to find reddit post.  Waiting a minute.");
     await sleep(retrySeconds * 1000);
@@ -44,7 +44,8 @@ const getRedditPost = async (redditClient, { query: queryTemplate, dateFormat, t
 const executeSchedule = async (args) => {
     const schedule = schedules.filter(s => s.name === args.schedule)[0];
     const channelId = args.channelId ? args.channelId : defaultChannelId;
-
+    const now = moment.utc();
+    schedule.query = schedule.query.replace("{date}", now.format(schedule.dateFormat));
     console.log(`Executing schedule ${schedule.name}.  Using query ${schedule.query} over the last ${schedule.time}.`);
     const client = new discord.Client();
     const promises = [
