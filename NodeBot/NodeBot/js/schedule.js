@@ -38,7 +38,7 @@ const getRedditPost = async (redditClient, { query, postTitle, time }) => {
     }
     console.log("Unable to find reddit post.  Waiting a minute.");
     await sleep(retrySeconds * 1000);
-    return getRedditPost(redditClient, { query, time });
+    return getRedditPost(redditClient, { query, postTitle, time });
 };
 
 const executeSchedule = async (args) => {
