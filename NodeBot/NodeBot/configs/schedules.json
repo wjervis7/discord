@@ -28,7 +28,7 @@
         "name": "twab",
         "query": "title:\"This Week at Bungie\" author:\"DTG_BOT\"",
         "postTitle": "This Week at Bungie {date}",
-        "dateFormat": "M/D/YYYY",
+        "dateFormat": "MM/DD/YYYY",
         "time": "week",
         "activity": "This Week at Bungie"
     }
