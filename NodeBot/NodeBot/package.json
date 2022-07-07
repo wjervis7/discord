@@ -10,7 +10,7 @@
     "discord.js": "^11.4.2",
     "minimist": "^1.2.0",
     "minimist-string": "^1.0.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.23",
     "snoowrap": "^1.15.2",
     "spacetime": "^5.6.0"
